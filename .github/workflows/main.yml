@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Run Alarm Bash
         run: ./Alarm++.sh
-      - name: Echo BS
-        run: echo "BS"
   job2:
     needs: job1
     runs-on: ubuntu-latest
