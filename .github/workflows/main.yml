@@ -15,6 +15,7 @@ jobs:
         run: chmod -x 'Alarm++.sh'
       - name: Run Alarm Bash
         run: ./Alarm++.sh
+        shell: bash
   job2:
     runs-on: windows-latest
     steps:
