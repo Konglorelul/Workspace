@@ -12,7 +12,7 @@ jobs:
       - name: Check out the repository to the runner
         uses: actions/checkout@v5
       - name: Exec Perm
-        run: chmod -x
+        run: chmod -x 'Alarm++.sh'
       - name: Run Alarm Bash
         run: ./Alarm++.sh
   job2:
@@ -20,11 +20,11 @@ jobs:
     steps:
       - name: Check out the repository to the runner
         uses: actions/checkout@v5
-      - name: Set up Python 3.13
+      - name: Set up Python 3.x
         uses: actions/setup-python@v5
         with:
-          python-version: 3.13
+          python-version: '3.x'
           architecture: 'x64'
       - name: Run Alarm Python
-        run: python Alarm++.py
+        run: python 'Alarm++.py'
   
