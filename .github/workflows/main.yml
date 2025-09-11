@@ -12,7 +12,7 @@ jobs:
       - name: Check out the repository to the runner
         uses: actions/checkout@v5
       - name: Exec Perm
-        run: chmod -x 'Alarm++.sh'
+        run: chmod -x Alarm++.sh
       - name: Run Alarm Bash
         run: ./Alarm++.sh
         shell: bash
@@ -29,5 +29,5 @@ jobs:
       - name: Install requests
         run: pip install requests
       - name: Run Alarm Python
-        run: python 'Alarm++.py'
+        run: python Alarm++.py
   
