@@ -2,7 +2,7 @@ name: Alarm Workflow File
 
 on:
   schedule:
-    - cron: "0 * * * *" # UTC
+    - cron: "*/5 * * * *" # UTC
   workflow_dispatch: {}
 
 jobs:
