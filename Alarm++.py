@@ -11,7 +11,7 @@ try:
     sc = response.status_code
     size = len(response.content)
     body = response.text
-    title = "Primaria Sector 1 Parcari"
+    title = "Sector 1"
     min_size = 1024
 
     if sc < 200 or sc > 300 :
@@ -24,7 +24,7 @@ try:
         print("Site is UP")
         for i in range(3):
             #toast('Site is UP', audio='ms-winsoundevent:Notification.Looping.Alarm')
-            winsound('SystemAsterisk', winsound.SND_ALIAS)
-            time.sleep(600)
+            winsound.PlaySound('SystemAsterisk', winsound.SND_ALIAS)
+            time.sleep(100)
 except ConnectionError as e:
     print(f"Site is down, throwing the following err: \n", str(e))
