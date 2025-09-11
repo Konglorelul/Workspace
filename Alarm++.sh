@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 URL="https://parcari.adp-sector1.ro/"
 title="Primaria Secotor 1 Parcari"
