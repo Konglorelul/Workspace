@@ -2,19 +2,27 @@ name: Alarm Workflow File
 
 on:
   schedule:
-    - cron: " 0 * * * *"
+    - cron: "0 * * * *" # UTC
   workflow_dispatch: {}
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      -name: Run Alarm Bash
-      run: ./Alarm++.sh
-
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v5
+      - name: Run Alarm Bash
+        run: ./Alarm++.sh
   job2:
     runs-on: ubuntu-latest
     steps:
-      -name: Run Alarm Python
-      run: python3 Alarm++.py
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v5
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+          architecture: 'x64'
+      - name: Run Alarm Python
+        run: python Alarm++.py
   
