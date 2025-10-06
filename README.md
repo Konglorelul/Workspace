@@ -1,6 +1,6 @@
 # Workspace
 
-Repository purposed for ongoing and finished personal projects.
+Branch purposed for testing ongoing and finished personal projects.
 
 ## Description
 
