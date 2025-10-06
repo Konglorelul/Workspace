@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+[project]
+name = "WebsiteWatcher"
+version = "0.0.1"
+authors = [
+  { name="Voicu Vlad", email="voicuvlad1802@gmail.com" },
+]
+description = "An alarm for site status"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Unix",
+    "Development Status :: 5 - Production/Stable",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
+
+[tool.hatch.build.targets.wheel]
+#packages = ["src/WebsiteWatcher"]
+only-include = ["src/WebsiteWatcher"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
+ 
+
