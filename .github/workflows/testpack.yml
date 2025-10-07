@@ -1,9 +1,11 @@
 name: Test Alarm Package
 
 on:
+  
   push:
     branches:
       - testing-branch
+  workflow_dispatch:
 
 jobs:
  job1:
