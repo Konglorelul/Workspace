@@ -32,9 +32,7 @@ jobs:
             cd Packages/WebsiteWatcher
             pip install .
       - name: Run pytest
-        run: |
-            pytest --ctrf report.json
-            testing --testing
+        run: pytest --ctrf report.json
       - name: Post PR Comment
         run: npx github-actions-ctrf report.json --pr-comment
         if: ${{always()}}
