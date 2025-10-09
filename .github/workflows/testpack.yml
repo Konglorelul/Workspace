@@ -37,7 +37,7 @@ jobs:
             testing --testing
       - name: Post PR Comment
         run: npx github-actions-ctrf report.json --pr-comment
-        if: always()
+        if: ${{always()}}
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
  job2:
