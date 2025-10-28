@@ -3,7 +3,8 @@ WORKDIR /webw
 
 COPY Packages/WebsiteWatcher ./WebsiteWatcher
 
-RUN pip install -e ./WebsiteWatcher
-RUN pip install pytest requests
+RUN pip install -r ./WebsiteWatcher/requirements.txt
+#RUN pip install pytest requests
 
 CMD ["pytest", "WebsiteWatcher/tests"]
+#ENTRYPOINT [ "executable" ]
