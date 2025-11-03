@@ -1,0 +1,11 @@
+FROM ubuntu:24.04
+
+RUN apt update && apt install -y curl
+
+COPY Scripts/Bash/WeatherStat/weather.sh /usr/local/bin/weather.sh
+
+RUN chmod +x /usr/local/bin/weather.sh
+
+USER nobody
+
+ENTRYPOINT ["usr/local/bin/weather.sh"]

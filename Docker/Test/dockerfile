@@ -1,0 +1,2 @@
+FROM vladgi:2
+CMD ["/bin/bash"]

@@ -1,0 +1,10 @@
+FROM python:3.12.3
+WORKDIR /webw
+
+COPY Packages/WebsiteWatcher ./WebsiteWatcher
+
+RUN pip install -r ./WebsiteWatcher/requirements.txt
+#RUN pip install pytest requests
+
+CMD ["pytest", "WebsiteWatcher/tests"]
+#ENTRYPOINT [ "executable" ]
