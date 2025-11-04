@@ -1,0 +1,7 @@
+apiVersion: v2
+name: redis
+description: redis
+icon: https://www.svgrepo.com/show/303460/redis-logo.svg
+
+version: 1.0.0
+appVersion: 1.0.0
