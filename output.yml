@@ -8,7 +8,7 @@ clusters:
         provider: minikube.sigs.k8s.io
         version: v1.37.0
       name: cluster_info
-    server: cluster_ip:32771
+    server: https://127.0.0.1:32771
   name: minikube
 - cluster:
     certificate-authority: /home/kong/.minikube/ca.crt
@@ -18,7 +18,7 @@ clusters:
         provider: minikube.sigs.k8s.io
         version: v1.37.0
       name: cluster_info
-    server: cluster_ip:45601
+    server: https://127.0.0.1:45601
   name: podman-cluster
 contexts:
 - context:
