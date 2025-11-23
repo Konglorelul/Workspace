@@ -1,0 +1,20 @@
+global:
+    imageRegistry: ''
+name: 'redis'
+image:
+    registry: ''
+    repository: redis
+    tag: 8.0.2
+    pullPolicy: Always
+nameOverride: ''
+replicaCount: 1
+ingress:
+    enabled: false
+    hosts: []
+    ingressClassName: ''
+    path_prefix: /
+service:
+    port: 80
+config:
+    listen: {}
+resources: {}
