@@ -5,3 +5,6 @@ image:
   tag: latest
 
 containerPort: 6379
+
+service:
+  port: 36379 

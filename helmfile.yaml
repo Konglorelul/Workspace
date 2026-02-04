@@ -1,0 +1,13 @@
+helmDefaults:
+    timeout: 600
+    skipDeps: true
+    historyMax: 2
+    kubeContext: minikube
+missingFileHandler: Error
+
+releases:
+- name: module
+  chart: ./Charts/Redis
+  namespace: redis
+  values:
+  - config: {}
