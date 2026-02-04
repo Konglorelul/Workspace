@@ -5,8 +5,10 @@ helmDefaults:
     kubeContext: minikube
 missingFileHandler: Error
 
+repositories:
+
 releases:
-- name: module
+- name: redis
   chart: ./Charts/Redis
   namespace: redis
   values:

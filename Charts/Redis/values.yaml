@@ -1,10 +1,12 @@
 replicaCount: 1
 
 image:
+  registry: docker.io
   repository: redis
-  tag: latest
+  tag: "7.2-alpine"
+  pullPolicy: IfNotPresent
 
 containerPort: 6379
-
+replicaCount: 1
 service:
   port: 36379 
