@@ -2,16 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}
+  namespace: {{ .Release.Name }}
+  labels: {{- include "common.labels.standard" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
-    matchLabels:
-      app: {{ .Release.Name }}
+    matchLabels: {{- include "common.labels.matchLabels" . | nindent 6}}  
   template:
     metadata:
-      labels:
-        app: {{ .Release.Name }}
-        name: {{ .Release.Name }}
+      labels: {{- include "common.labels.standard" . | nindent 8 }}
     spec:
       containers:
         - name: redis
@@ -21,7 +20,7 @@ spec:
               containerPort: {{ .Values.containerPort }}
               protocol: TCP
           resources:
-            {{- toYaml .Values.resources | nindent 10 }}
+            {{- toYaml .Values.resources | nindent 12 }}
           env:
           - name: ALLOW_EMPTY_PASSWORD
             value: "yes"

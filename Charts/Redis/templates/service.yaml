@@ -3,12 +3,10 @@ kind: Service
 metadata:
     name: {{ include "common.names.name" . }}
     namespace: {{ .Release.Name }}
-    labels: {{- include "common.labels.standard" . | nindent 4 }}
+    labels: {{- include "common.labels.standard" . | nindent 6 }}
 spec:
     type: NodePort
-    selector:
-        app: {{ .Release.Name }}
-        name: {{ .Release.Name }}
+    selector: {{- include "common.labels.matchLabels" . | nindent 6}}
     ports:
     - name: redis
       protocol: TCP
