@@ -5,13 +5,15 @@ metadata:
     namespace: {{ .Release.Name }}
     labels: {{- include "common.labels.standard" . | nindent 4 }}
 spec:
-    type: ClusterIP
-    sessionAffinity: None
-    publishNotReadyAddresses: false
+    type: NodePort
     selector:
-        {{- include "common.labels.matchLabels" . | nindent 6 }}
+        app: {{ .Release.Name }}
+        name: {{ .Release.Name }}
     ports:
-    - port: {{ .Values.service.port }}
+    - name: redis
       protocol: TCP
-      targetPort: redis
-      name: redos
+      port: {{ .Values.containerPort }}
+      targetPort: {{ .Values.containerPort }}
+      nodePort: {{ .Values.externalPort }}
+    sessionAffinity: None
+    externalTrafficPolicy: Cluster

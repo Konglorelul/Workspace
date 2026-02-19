@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         app: {{ .Release.Name }}
+        name: {{ .Release.Name }}
     spec:
       containers:
         - name: redis
@@ -19,3 +20,12 @@ spec:
             - name: redis
               containerPort: {{ .Values.containerPort }}
               protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 10 }}
+          env:
+          - name: ALLOW_EMPTY_PASSWORD
+            value: "yes"
+      volumes:
+      - name: config
+        configMap:
+          name: {{ .Release.Name }}

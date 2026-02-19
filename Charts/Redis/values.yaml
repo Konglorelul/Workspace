@@ -7,6 +7,22 @@ image:
   pullPolicy: IfNotPresent
 
 containerPort: 6379
+externalPort: 30487
 replicaCount: 1
-service:
-  port: 36379 
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+persistence:
+  enabled: false
+  size: 1Gi
+  storageClass: ""
+
+config:
+  maxmemory: "100mb"
+  maxmemory-policy: "allkeys-lru"
